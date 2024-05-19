@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<meta name="author" content="">
+<meta name="description" content="">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U-Listing Directory - Listing HTML Template</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="images/favicon.png">
+<!-- Style CSS -->
+<link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="css/mmenu.css">
+<link rel="stylesheet" href="css/style.css" id="colors">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap&subset=latin-ext,vietnamese" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="main_wrapper"> 
+  <?php include_once('header.inc');?>
+  <div class="clearfix"></div>
+  
+  <!-- Content --> 
+  <div class="utf_contact_map"> 
+    <div>
+            
+	</div>   
+  </div>
+  <div class="clearfix"></div>
+  
+  <div class="container">
+    <div class="row"> 
+      <div class="col-md-8">
+        <section id="contact" class="margin-bottom-70">
+          <h4><i class="sl sl-icon-phone"></i> Contact Form</h4>          
+          <form action="email-templates/contact-form.php" method="post" id="contactform">
+            <div class="row">
+              <div class="col-md-6">  
+				  <input name="name" type="text" placeholder="Frist Name" required />                
+              </div>
+              <div class="col-md-6">                
+                  <input name="name" type="text" placeholder="Last Name" required />                
+              </div>
+              <div class="col-md-6">                
+                  <input name="email" type="email" placeholder="Email" required />                
+              </div>
+              <div class="col-md-6">
+              <input name="mobile" type="text" placeholder="Mobile Number" required />
+              </div>
+			  <div class="col-md-12">
+        <textarea name="comment" cols="40" rows="2" id="comments" placeholder="Your Message" required></textarea>
+			  </div>
+            </div>            
+            <input type="submit" class="submit button" id="submit" value="Submit" />
+          </form>
+        </section>
+      </div>
+      
+      <div class="col-md-4">
+		<div class="utf_box_widget margin-bottom-70">
+			<h3><i class="sl sl-icon-map"></i> Contact Details</h3>
+			<div class="utf_sidebar_textbox">
+			  <ul class="utf_contact_detail">
+				<li><strong>Phone:-</strong> <span>+ 001 245 0154</span></li>
+				<li><strong>Web:-</strong> <span><a href="#">www.healthaidpk.com</a></span></li>
+				<li><strong>E-Mail:-</strong> <span><a href="mailto:info@example.com">abutt3009@gmail.com</a></span></li>
+				<li><strong>Our Team:-</strong> <span>Ahmad Ali Butt, Muhammad Awais, Nasar Bilal</span></li>
+			  </ul>
+			</div>	
+		</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+    <?php include_once('footer.inc');?>
+  <div id="bottom_backto_top"><a href="#"></a></div>
+</div>
+
+<!-- Scripts --> 
+<script src="scripts/jquery-3.4.1.min.js"></script> 
+<script src="scripts/chosen.min.js"></script> 
+<script src="scripts/slick.min.js"></script> 
+<script src="scripts/rangeslider.min.js"></script> 
+<script src="scripts/magnific-popup.min.js"></script> 
+<script src="scripts/jquery-ui.min.js"></script> 
+<script src="scripts/mmenu.js"></script>
+<script src="scripts/tooltips.min.js"></script> 
+<script src="scripts/color_switcher.js"></script>
+<script src="scripts/jquery_custom.js"></script>
+
+</div> 
+
+</body>
+</html>
