@@ -55,7 +55,7 @@ fnList[2](); // ?
   counter.reset();
   console.log(counter.getCount()); // 100
 </script> -->
-<script>
+<!-- <script>
    async function apicall (delay = 2000 , retrive = 3){
             console.log("Fetching data... This will retry up to", retrive, "times with a delay of", delay, "ms");
             // Simulating a network request
@@ -107,9 +107,36 @@ console.log("2. After checksettimeout");
 
 
 console.log("3. After apicall");
-   
-</script>
+    -->
+<!-- </script> -->
+<!-- object and this keyword -->
+ <script>
+  // age = 20;
+  const person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+      console.log("Hello, my name is " + this.name);
+      let self = this; // 'this' refers to the person object
+      return function() {
+        console.log("This is a nested function, referring to age " + self.age);
+      };
+    }
+  };
+  // name = "global name jane";
+  // const person2 = {
+  //   name: "Jane",
+  //   age: 25,
+  //   greet: ()=>{
+  //     console.log("Hello, my name is " + this.name);
+  //   }
+    
+  // };
 
+  let greet1 = person.greet(); // "Hello, my name is John"
+  greet1(); // "This is a nested function, referring to age undefined"
+  // person2.greet(); // "Hello, my name is Jane"
+ </script>
 
 </body>
 </html>
