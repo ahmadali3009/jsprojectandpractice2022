@@ -112,17 +112,17 @@ console.log("3. After apicall");
 <!-- object and this keyword -->
  <script>
   // age = 20;
-  const person = {
-    name: "John",
-    age: 30,
-    greet: function() {
-      console.log("Hello, my name is " + this.name);
-      let self = this; // 'this' refers to the person object
-      return function() {
-        console.log("This is a nested function, referring to age " + self.age);
-      };
-    }
-  };
+  // const person = {
+  //   name: "John",
+  //   age: 30,
+  //   greet: function() {
+  //     console.log("Hello, my name is " + this.name);
+  //     let self = this; // 'this' refers to the person object
+  //     return function() {
+  //       console.log("This is a nested function, referring to age " + self.age);
+  //     };
+  //   }
+  // };
   // name = "global name jane";
   // const person2 = {
   //   name: "Jane",
@@ -133,10 +133,95 @@ console.log("3. After apicall");
     
   // };
 
-  let greet1 = person.greet(); // "Hello, my name is John"
-  greet1(); // "This is a nested function, referring to age undefined"
+  // let greet1 = person.greet(); // "Hello, my name is John"
+  // greet1(); // "This is a nested function, referring to age undefined"
   // person2.greet(); // "Hello, my name is Jane"
  </script>
+ <script>
+//   const person = {
+//   name: "Ahmad",
+//   greet: function () {
+//     console.log("1:", this.name); // ?
+
+//     function name() {
+//       console.log("2:", this.name); // ?
+//     };
+
+//     setTimeout(() => {
+//       console.log("3:", this.name); // ?
+//     }, 2000);
+//   },
+// };
+// person.greet(); // "1: Ahmad", "2: undefined", "3: Ahmad"
+ </script>
+<script>
+  const user = {
+  name: "Ahmad",
+  showName: function () {
+    console.log(this.name);
+  },
+};
+
+const show = user.showName.bind(user); // Ahmad
+console.log(show); // ?
+show(); // ?
+
+const boundShow = user.showName.bind(user);
+boundShow(); // ?
+
+function showAge(age) {
+  console.log(`${this.name} is ${age} years old`);
+}
+
+const person = { name: "Ahmad" };
+showAge.call(person, 25); // Ahmad is 25 years old
+
+</script>
+
+<script>
+  //createing the custom bind function
+  function map(arr , callback){
+    let newArr = [];
+    if(!Array.isArray(arr)){
+      throw new Error("First argument must be an array");
+    }
+    for(let i=0; i < arr.length; i++)
+    {
+      console.log(callback(arr[i], i, arr));
+      newArr.push(callback(arr[i], i, arr));
+    }
+    return newArr;
+  }
+
+  map([1, 2, 3], (element , index)=> element * 2);
+
+  function filter(arr , callback , thisarg)
+  {
+    let newarr = [];
+    if(!Array.isArray(arr)){
+      throw new Error("First argument must be an array");
+    }
+    if(callback === undefined || typeof callback !== 'function'){
+      throw new Error("Second argument must be a function");
+    }
+    for(let i=0; i<arr.length; i++)
+     if(i in arr)
+     {
+      let passestest = thisarg ? callback.call(thisarg, arr[i] , i ,arr) : callback(arr[i] , i , arr);
+      if(passestest)
+      {
+        newarr.push(arr[i]);
+      }
+     }
+     console.log(newarr);
+    return newarr;
+  }
+
+  filter([1, 2, 3, 4, 5], (element) => element > 2);
+  
+</script>
+
+
 
 </body>
 </html>
