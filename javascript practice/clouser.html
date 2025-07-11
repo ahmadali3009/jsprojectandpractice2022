@@ -7,6 +7,7 @@
 </head>
 <body>
     hello world
+    <input type="text" id="search" placeholder="Search...">
     <!-- <script>
         function buildFunctions() {
   let funcs = [];
@@ -154,7 +155,7 @@ console.log("3. After apicall");
 // };
 // person.greet(); // "1: Ahmad", "2: undefined", "3: Ahmad"
  </script>
-<script>
+<!-- <script>
   const user = {
   name: "Ahmad",
   showName: function () {
@@ -217,9 +218,32 @@ showAge.call(person, 25); // Ahmad is 25 years old
     return newarr;
   }
 
-  filter([1, 2, 3, 4, 5], (element) => element > 2);
+  filter([1, 2, 3, 4, 5], (element) => element > 2); -->
   
-</script>
+<!-- </script> -->
+ <script>
+  function debounce(fn , delay)
+  {
+    console.log("Debounce function initialized with delay:", fn, delay);
+    let timer;
+    return function(...rgs){
+      console.log("Debounced function called with arguments:", rgs);
+      clearTimeout(timer);
+      timer = setTimeout(()=>{
+        console.log("Executing function after delay:", this, delay);
+        fn.apply(this, rgs);
+      }, delay);
+    }
+  }
+
+
+  document.getElementById("search").addEventListener("input", debounce((e) => {
+  console.log("Searching for:", e?.target.value);
+}, 400));
+
+
+
+ </script>
 
 
 
